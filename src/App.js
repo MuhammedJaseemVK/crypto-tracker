@@ -6,7 +6,7 @@ import CryptoSection from './components/CryptoPage';
 function App() {
 
   return (
-    <div className='h-full w-full bg-violet-500'>
+    <div className='h-full w-full bg-slate-500'>
       <Router>
         <Routes>
           <Route path='/' exact element={<HeroSection />} />

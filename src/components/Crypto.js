@@ -21,7 +21,7 @@ function Crypto({ crypto }) {
         <p className="w-[10%] text-green-500">{crypto.priceChange1h.toFixed(2)}%</p>
       )}
       <div className='w-[20%] hidden sm:block'>${crypto.marketCap.toFixed(2)}</div>
-      <button className=' w-fit bg-violet-500 cursor-pointer rounded-md px-2' onClick={handleClick}>Open</button>
+      <button className=' w-fit bg-slate-500 cursor-pointer rounded-md px-2' onClick={handleClick}>Open</button>
     </div>
   )
 }

@@ -39,10 +39,10 @@ function HeroSection() {
   return (
     <div className='h-screen w-full bg-slate-800 flex flex-col items-center'>
       <div className=' my-5 flex flex-col gap-2 items-center justify-between py-4 md:py-0 px-4 text-lg text-gray-700'>
-        <p className='font-bold text-xl sm:text-xl text-violet-500'>Crypto Price Tracker</p>
+        <p className='font-bold text-xl sm:text-xl text-slate-500'>Crypto Price Tracker</p>
         <div className='flex items-center gap-3'>
-          <input className='rounded-lg text-sm px-2 py-1 focus:outline-none bg-violet-500 text-white placeholder-white ' value={searchTerm} onChange={handleChange} placeholder='Search Crypto' type="text" id="search" />
-          <IoMdRefreshCircle className='text-white text-violet-500' size={40} onClick={refreshPage} />
+          <input className='rounded-lg text-sm px-2 py-1 focus:outline-none bg-slate-500 text-white placeholder-white ' value={searchTerm} onChange={handleChange} placeholder='Search Crypto' type="text" id="search" />
+          <IoMdRefreshCircle className='text-white cursor-pointer' size={40} onClick={refreshPage} />
         </div>
       </div>
       {
