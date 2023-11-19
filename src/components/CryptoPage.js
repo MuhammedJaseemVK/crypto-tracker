@@ -28,7 +28,7 @@ function CryptoPage() {
         <div className='h-screen bg-slate-800 w-full flex justify-center items-center'>
             {
                 crypto &&
-                <div className='flex flex-col justify-between gap-2 w-[30%] px-6 py-4 items-center bg-slate-500 rounded-md text-white'>
+                <div className='flex flex-col justify-between gap-2 w-[90%] sm:w-[30%] px-6 py-4 items-center bg-slate-500 rounded-md text-white'>
                     <p className='font-bold text-xl'>{crypto.name}</p>
                     <img src={crypto.icon} className='w-20' alt={crypto.symbol} />
                     <div className='w-full flex justify-between '>
