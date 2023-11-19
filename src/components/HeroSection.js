@@ -11,6 +11,7 @@ function HeroSection() {
   useEffect(() => {
     setIsLoading(true);
     refreshPage();
+    // eslint-disable-next-line
   }, [])
 
   const handleChange = (e) => {
@@ -29,31 +30,33 @@ function HeroSection() {
         'X-API-KEY': apiKey
       }
     }
-    fetch("https://openapiv1.coinstats.app/coins?limit=10", options)
+    fetch("https://openapiv1.coinstats.app/coins", options)
       .then(response => response.json())
-      .then(response => {console.log(response);setCoins(response.result);setIsLoading(false);})
+      .then(response => { console.log(response); setCoins(response.result); setIsLoading(false); })
       .catch(err => console.error(err));
   }
 
   return (
-    <div className='h-full w-full bg-slate-800 flex flex-col items-center'>
+    <div className='h-screen w-full bg-slate-800 flex flex-col items-center'>
       <div className=' my-5 flex flex-col gap-2 items-center justify-between py-4 md:py-0 px-4 text-lg text-gray-700'>
-        <p className='font-bold text-xl sm:text-xl text-white'>Crypto Price Tracker</p>
+        <p className='font-bold text-xl sm:text-xl text-violet-500'>Crypto Price Tracker</p>
         <div className='flex items-center gap-3'>
-          <input className='rounded-lg text-sm px-2 py-1 focus:outline-none ' value={searchTerm} onChange={handleChange} placeholder='Search Crypto' type="text" id="search" />
-          <IoMdRefreshCircle className='text-white' size={30} onClick={refreshPage} />
+          <input className='rounded-lg text-sm px-2 py-1 focus:outline-none bg-violet-500 text-white placeholder-white ' value={searchTerm} onChange={handleChange} placeholder='Search Crypto' type="text" id="search" />
+          <IoMdRefreshCircle className='text-white text-violet-500' size={40} onClick={refreshPage} />
         </div>
       </div>
-      <div className='h-full w-[50%] flex flex-col justify-center items-center text-white '>
-        {
-          isLoading && <div className='text-xl font-bold'>Loading...</div>
-        }
-        {
-          filteredCoins && filteredCoins.map((crypto) => {
+      {
+        isLoading && <div className='text-xl font-bold text-white'>Loading...</div>
+      }
+      {
+        filteredCoins &&
+        <div className='w-[60%] flex flex-col items-center text-white my-5 overflow-y-scroll'>
+          {filteredCoins.map((crypto) => {
             return <Crypto key={crypto.symbol} crypto={crypto} />
           })
-        }
-      </div>
+          }
+        </div>
+      }
     </div>
   )
 }
