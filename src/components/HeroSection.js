@@ -50,7 +50,7 @@ function HeroSection() {
       }
       {
         filteredCoins &&
-        <div className='w-[60%] flex flex-col items-center text-white my-5 overflow-y-scroll'>
+        <div className='w-[90%] sm:w-[60%] flex flex-col items-center text-white my-5 overflow-y-scroll'>
           {filteredCoins.map((crypto) => {
             return <Crypto key={crypto.symbol} crypto={crypto} />
           })
